@@ -8,7 +8,7 @@ import (
 
 func main() {
 	var (
-		providerName = flag.String("provider", "http", "Provider name - Available http")
+		providerName = flag.String("provider", "http", "Provider name - Available http and s3")
 		maxWidth     = flag.Int("max_width", 1000, "Max width")
 		maxHeight    = flag.Int("max_height", 1000, "Max height")
 		addr         = flag.String("addr", "localhost:8080", "Addr")
@@ -41,7 +41,7 @@ func main() {
 	})
 
 	if err != nil {
-		log.Panicf("Unable to start the image proxy: %s\n", err.Error())
+		log.Printf("Unable to start the image proxy: %s\n", err.Error())
 		return
 	}
 
